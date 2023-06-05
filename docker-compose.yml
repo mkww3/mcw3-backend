@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  core:
+    depends_on:
+      - db
+    container_name: "porto-core"
+    build:
+      context: core
+      dockerfile: core.dockerfile
+    environment:
+      - RPC_URL
+      - DFNS_AUTHORIZATION
+      - MONERIUM_AUTHORIZATION
+      - MANTLE_PRIVATE_KEY
+    ports:
+      - "8080:8080"
+  db:
+    container_name: "porto-db"
+    build:
+      context: db
+      dockerfile: db.dockerfile
+    environment:
+      POSTGRES_PASSWORD: "root"
+    ports:
+      - "5432:5432"

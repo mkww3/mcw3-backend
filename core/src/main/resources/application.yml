@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    # Hardcoded password, don't do it in production :D
+    url: "jdbc:postgresql://porto-db:5432/porto"
+    username: "spring"
+    password: "porto"
+monerium:
+  profile-id: "0c66e052-c1dd-11ed-a042-2a5f7fc2c676"
+  authorization: "${MONERIUM_AUTHORIZATION}"
+dfns:
+  authorization: "${DFNS_AUTHORIZATION}"
+web3:
+  rpc: "${RPC_URL}"
+mantle:
+  rpc: "https://rpc.testnet.mantle.xyz/"
+  private-key: "${MANTLE_PRIVATE_KEY}"
+server:
+  error:
+    include-message: always
